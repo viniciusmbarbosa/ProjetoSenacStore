@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+
+from Store.models import Departamento
 # Create your views here.
 def index(request):
     meu_nome = 'Lojas brasil'
@@ -11,7 +13,8 @@ def index(request):
     return render(request,'index.html', context)
 
 def teste(request):
-    depto = ['Casa', 'informatica', 'Telefonia']
+    #depto = ['Casa', 'informatica', 'Telefonia']
+    depto = Departamento.objects.all()
     context = {'departamentos': depto}
     
     return render(request,'teste.html', context)
