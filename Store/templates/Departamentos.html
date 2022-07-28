@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<header>
+    <meta charset="utf-8">
+    <meta name="description" content="Categorias de Produtos">
+    <meta name="viwport" content="with=device-width, initial-scale=1.0">
+    <meta http-equiv="X-AU-Compatible"content="IE=edge">
+    <title>Departamento</title>
+</header>
+<body>
+    <h1>Senac Store</h1>
+    <ul>
+        {% for depto in departamentos %}
+        <li>{{ depto.nome }} </li>
+        {% endfor %}
+    </ul>
+
+    
+</body>
+<html>    
