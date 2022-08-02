@@ -30,18 +30,18 @@ def Departamentos(request):
 
     #Categotias
 
-def categorias(request):
+def categorias(request, id):
     #depto = ['Notebooks', 'Monitores', 'Impressoras']
-    categ = Categoria.objects.all()
+    categ = Categoria.objects.filter(Departamento_id = id)
     context = {'categorias': categ}
 
     return render(request,'categorias.html', context)
 
     #produtos
 
-def produtos(request):
+def produtos(request, id):
     #depto = ['Notebooks', 'Monitores', 'Impressoras']
-    pdt = Produto.objects.all()
+    pdt = Produto.objects.filter(categoria_id = id)
     context = {'produtos': pdt}
 
     return render(request,'produtos.html', context)

@@ -11,7 +11,8 @@
     <h1>Senac Store</h1>
     <ul>
         {% for depto in departamentos %}
-        <li>{{ depto.nome }} </li>
+        <li><a href="/categorias/{{ depto.id }}" target="_blank"> {{ depto.nome }} </a> </li>
+        
         {% endfor %}
     </ul>
 
