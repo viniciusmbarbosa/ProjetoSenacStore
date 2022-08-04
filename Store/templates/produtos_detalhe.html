@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-AU-Compatible" content="IE=edge">
+    <meta name="viwport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalhes do produto">
+    <title>Detalhes do produto</title>
+    <Style>
+        p{
+            <marquee behavior="" direction=""></marquee>
+        }
+    </Style>
+   </head>
+   <body>
+    <header>
+        <h1>{{ produtos_detalhe.nome  }}</h1>
+        <h5>{{ Departamento.nome }} >> {{ Categoria.nome }}</h5>
+        <img src="{{ produtos_detalhe.imagem.url }}"width="300px">
+    </header>
+    <h2>{{produto_detalhe.lancamento}}</h2>
+    <p>{{ produtos_detalhe.descrição }}</p>
+    <h3>{{ produtos_detalhe.preco }}</h3>
+    <h3>{{ produtos_detalhe.estoque }}</h3>
+   </body>
+</html>

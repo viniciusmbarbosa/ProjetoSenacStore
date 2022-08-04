@@ -33,7 +33,8 @@ def Departamentos(request):
 def categorias(request, id):
     #depto = ['Notebooks', 'Monitores', 'Impressoras']
     categ = Categoria.objects.filter(Departamento_id = id)
-    context = {'categorias': categ}
+    depto = Departamento.objects.get(id = id)
+    context = {'categorias': categ, 'departamento': depto}
 
     return render(request,'categorias.html', context)
 
@@ -42,6 +43,13 @@ def categorias(request, id):
 def produtos(request, id):
     #depto = ['Notebooks', 'Monitores', 'Impressoras']
     pdt = Produto.objects.filter(categoria_id = id)
-    context = {'produtos': pdt}
-
-    return render(request,'produtos.html', context)
+    categ = Categoria.objects.get(id = id)
+    context = {'produtos': pdt, 'categorias': categ}
+    
+def produtos_detalhe(request, id):
+    #depto = ['Notebooks', 'Monitores', 'Impressoras']
+    categ = Produto.objects.get(id = id)
+    depto = Departamento.objects.get(id = id)
+    context = {'produtos_detalhe': categ}
+    
+    return render(request,'produtos_detalhe.html', context)
