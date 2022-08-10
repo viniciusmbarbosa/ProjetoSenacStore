@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <header>
@@ -5,9 +6,20 @@
     <meta name="description" content="Categorias de Produtos">
     <meta name="viwport" content="with=device-width, initial-scale=1.0">
     <meta http-equiv="X-AU-Compatible"content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>Departamento</title>
 </header>
 <body>
+    <div id="topo"></div>
+    <img src="{% static '/img/logo_senac.jpg' %}" width="150">
+    
+    <ul>
+        <li>Departamentos</li>
+        <li>Contato</li>
+        <li>Sobre a Empresa</li>
+    </ul>
+
+    </div>
     <h1>Senac Store</h1>
     <ul>
         {% for depto in departamentos %}
