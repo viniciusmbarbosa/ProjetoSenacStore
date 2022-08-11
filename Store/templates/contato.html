@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'includes/topo.html' %}
+    <div class="'container-contato">
+        <div>
+            <h3>Contato</h3>
+
+            <form action="{% url 'enviar_email' %}" method="post">
+                {% csrf_token %}
+                <label for="nome">nome</label>
+                <input type="text" id="name" name="name" placeholder="Digite o seu nome" required></input>
+                <br>
+                
+                <label for="">Email</label> 
+                <input type="email" id="email" name="email" placeholder="Digite o seu Email" required></input>
+               <br>
+
+                <label for="">Phone</label> 
+                <input type="number" id="phone" name="phone" placeholder="Digite o seu telefone" required></input>
+                <br>
+
+                <label for="">Assunto</label> 
+                <input type="text" id="assunto" name="assunto" placeholder="Assunto" required></input>
+                 <br>
+
+                <label for="">mensagem</label> 
+                <textarea type="text" id="email" name="mensagem" placeholder="Mensagem" required></textarea>
+                <br>
+                <input type="submit" volue="Enviar" id="btn">
+                
+                   
+            </form>
+            {%if msg != '' %}
+                <p>{{ msg }}</p>
+                {% endif %}
+        </div>
+    </div>
+    
+</body>
+</html>

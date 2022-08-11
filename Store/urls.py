@@ -8,6 +8,8 @@ urlpatterns = [
     path('Departamentos/', views.Departamentos,name='departamentos'),
     path('categorias/<int:id>', views.categorias,name='categorias'),
     path('produtos/<int:id>', views.produtos,name='produtos'),
-    path('produtos_detalhe/<int:id>', views.produtos_detalhe,name='produtos_detalhe')
-    path('contato/', view.contato, name='contato'),
+    path('produtos_detalhe/<int:id>', views.produtos_detalhe, name='produto_detalhe'),
+    path('institucional/', views.institucional, name='institucional'),
+    path('contato/', views.contato, name='contato'),
+    path('contato/enviar', views.enviar_email, name='enviar_email'),
 ]
